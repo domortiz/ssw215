@@ -13,7 +13,7 @@
   /* Style the top navigation bar */
 .navbar {
     overflow: hidden; /* Hide overflow */
-    background-color: #333; /* Dark background color */
+    background-color: #233142; /* Dark background color */
   }
   
   /* Style the navigation bar links */
@@ -147,7 +147,7 @@
     background: radial-gradient(#fff, #aaa);
     background-size: 100vw 100vh; 
     overflow: hidden;
-    padding-top: 40vh;
+    padding-top: 0vh;
   }
   
   .logo {
@@ -155,7 +155,7 @@
     font-family: 'Roboto';
     font-size: 12vmin;
     font-weight: 700;
-    animation: netflix_style 3.5s infinite;
+    animation: netflix_style 3.5s ;
     outline: none;
     white-space: nowrap;
   }
@@ -191,4 +191,16 @@
     100% {
       opacity: 0;
     }
+  }
+
+  .indexRow{
+    display: block;
+    color: red;
+    background: radial-gradient( #aaa, #fff);
+    padding: 100px;
+  }
+
+  .homefont{
+    font-size: large;
+    color: black;
   }
