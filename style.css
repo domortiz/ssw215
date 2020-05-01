@@ -155,7 +155,7 @@
     font-family: 'Roboto';
     font-size: 12vmin;
     font-weight: 700;
-    animation: netflix_style 3.5s ;
+    animation: netflix_style 3.5s infinite;
     outline: none;
     white-space: nowrap;
   }
@@ -197,10 +197,48 @@
     display: block;
     color: red;
     background: radial-gradient( #aaa, #fff);
-    padding: 100px;
+    padding: 50px;
   }
 
   .homefont{
     font-size: large;
     color: black;
+  }
+
+  .tech-slideshow {
+    height: 200px;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .tech-slideshow > div {
+    height: 200px;
+    width: 2526px;
+    background: url("./images/moviebanner.png");
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translate3d(0, 0, 0);
+  }
+  .tech-slideshow .mover-1 {
+    animation: moveSlideshow 12s linear infinite;
+  }
+  .tech-slideshow .mover-2 {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    background-position: 0 -200px;
+    animation: moveSlideshow 15s linear infinite;
+  }
+  .tech-slideshow:hover .mover-2 {
+    opacity: 1;
+  }
+  
+  @keyframes moveSlideshow {
+    100% { 
+      transform: translateX(-66.6666%);  
+    }
   }
