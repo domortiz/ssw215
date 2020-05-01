@@ -132,14 +132,6 @@
   padding: 5px;
   margin: 20px;
   }
-
-  @function makelongshadow($length,$angle) {
-    $val: 0px 0px transparent;
-    @for $i from 1 through $length {
-      $val: #{$val}, #{$i}px #{$i*$angle}px #aaa;
-    }
-    @return $val;
-  }
   
   @import url('https://fonts.googleapis.com/css?family=Roboto:700,900');
   
@@ -233,12 +225,100 @@
     background-position: 0 -200px;
     animation: moveSlideshow 15s linear infinite;
   }
-  .tech-slideshow:hover .mover-2 {
-    opacity: 1;
-  }
   
   @keyframes moveSlideshow {
     100% { 
       transform: translateX(-66.6666%);  
     }
+  }
+
+  .indexPageContent {
+    background-color: #f2f2f2;
+    color: black;
+    text-align: center;
+    padding-left: 25%;
+      padding-right: 25%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .indexPageContent span.head {
+      font-size: 32px;
+    display: block;
+      padding-top: 50px;
+  }
+  
+  .indexPageContent span.body {
+    font-size: 26px;
+    display: block;
+      padding-top: 15px;
+    padding-bottom: 50px;
+  }
+  
+
+  form {
+    /* Center the form on the page */
+    margin: 0 auto;
+    width: 400px;
+    /* Form outline */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  form li + li {
+    margin-top: 1em;
+  }
+  
+  label {
+    /* Uniform size & alignment */
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+  }
+  
+  input, 
+  textarea {
+    /* To make sure that all text fields have the same font settings
+       By default, textareas have a monospace font */
+    font: 1em sans-serif;
+  
+    /* Uniform text field size */
+    width: 300px;
+    box-sizing: border-box;
+  
+    /* Match form field borders */
+    border: 1px solid #999;
+  }
+  
+  input:focus, 
+  textarea:focus {
+    /* Additional highlight for focused elements */
+    border-color: #000;
+  }
+  
+  textarea {
+    /* Align multiline text fields with their labels */
+    vertical-align: top;
+  
+    /* Provide space to type some text */
+    height: 5em;
+  }
+  
+  .button {
+    /* Align buttons with the text fields */
+    padding-left: 90px; /* same size as the label elements */
+  }
+  
+  button {
+    /* This extra margin represent roughly the same space as the space
+       between the labels and their text fields */
+    margin-left: .5em;
   }
