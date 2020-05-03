@@ -1,31 +1,13 @@
 {% extends "base.html" %}
 {% block title %}Contact{% endblock %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <title>Quaranflix</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-    }
-  </style>
-</head>
+{% block content %}
 
 <body>
   <div class="banner">
-    <img src="images/banner.png" alt="QuaranFlix Banner" style="max-width: 100%; height: auto; width: 100%; margin: auto; display: block;"></img>
+    <img src="images/banner.png" alt="quaranSite Banner"
+      style="max-width: 100%; height: auto; width: 100%; margin: auto; display: block;"></img>
   </div>
 
-  <div class="navbar">
-    <a href="/">Home</a>
-    <a href="MeetTheTeam">Meet the Team</a>
-    <a href="quiz">Take the Quiz</a>
-    <a href="contact" class="right">Contact</a>
-  </div>
   </div>
   <div class="indexPageContent">
     <span class="head">Any questions? Concerns?</span>
@@ -49,5 +31,6 @@
     </form>
 
 </body>
+{% endblock %}
 
 </html>

@@ -1,3 +1,11 @@
+.jumbotron {
+  background-size: cover;
+}
+
+.jumbotron-content {
+  color: white;
+}
+
 .header {
   padding: 80px;
   /* some padding */
