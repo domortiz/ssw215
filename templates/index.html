@@ -1,40 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <script>
-    var movies = ["Friends", "The Office", "Love is Blind", "Breaking Bad", "Tiger King"];
-
-    function randomMovie() {
-      randomItem = movies[Math.floor(Math.random() * movies.length)];
-      document.getElementById("printMovie").innerHTML = randomItem;
-    }
-  </script>
-
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-  <title>QuaranFlix</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-    }
-  </style>
-</head>
-
-<body>
-
-  <div class="banner">
-    <img src="images/banner.png" alt="QuaranFlix Banner" style="max-width: 100%; height: auto; width: auto; margin: auto; display: block;"></img>
-  </div>
-
-  <div class="navbar">
-    <a href="/">Home</a>
-    <a href="MeetTheTeam">Meet the Team</a>
-    <a href="quiz">Take the Quiz</a>
-    <a href="contact" class="right">Contact</a>
-  </div>
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+<h1> Test </h1>
+{% endblock %}
 
   <div class="indexRow">
     <h2>Welcome to QUARANFLIX </h2>
