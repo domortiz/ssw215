@@ -1,42 +1,43 @@
 {% extends "base.html" %}
 {% block title %}Home Page{% endblock %}
 {% block content %}
+
 <body>
   <script>
-    var movies =["Friends", "The Office", "Love is Blind","Breaking Bad","Tiger King"];
-    
-    function randomMovie(){
-      randomItem = movies[Math.floor(Math.random()*movies.length)];
-      document.getElementById("printMovie").innerHTML=randomItem;
+    var movies = ["Friends", "The Office", "Love is Blind", "Breaking Bad", "Tiger King"];
+
+    function randomMovie() {
+      randomItem = movies[Math.floor(Math.random() * movies.length)];
+      document.getElementById("printMovie").innerHTML = randomItem;
     }
   </script>
-<div class="indexRow">
-  <h2>Welcome to QuaranSite! </h2>
-  <p class="homefont">With the current Covid-19 pandemic and quarantine conditions that many find themselves in,
-    it is important to unwind and keep yourself entertained. <br><br>
-    Because of this, we have designed this site to give you some Netflix recommendations that
-    you can watch today! <br><br>
-    Our quick and easy quiz will analyze your preferences and provide you with a show that we think you will enjoy
-  </p>
+  <div class="indexRow">
+    <h2>Welcome to QuaranSite! </h2>
+    <p class="homefont">With the current Covid-19 pandemic and quarantine conditions that many find themselves in,
+      it is important to unwind and keep yourself entertained. <br><br>
+      Because of this, we have designed this site to give you some Netflix recommendations that
+      you can watch today! <br><br>
+      Our quick and easy quiz will analyze your preferences and provide you with a show that we think you will enjoy
+    </p>
 
-  <div class="tech-slideshow">
-    <div class="mover-1"></div>
-    <div class="mover-2"></div>
+    <div class="tech-slideshow">
+      <div class="mover-1"></div>
+      <div class="mover-2"></div>
+    </div>
+
   </div>
 
-</div>
 
 
-
-<div class="indexRowAlt">
-  <h2>Don't want to take the Quiz? </h2>
-  <p>Click the button below to generate a random Netflix show that you could watch!</p>
-  <button type="button" onclick="randomMovie()">Let's Binge!</button>
-  <p id="printMovie"></p>
-</div>
-<div class="footer">
-  <h2>Stay Home, Save Lives</h2>
-</div>
+  <div class="indexRowAlt">
+    <h2>Don't want to take the Quiz? </h2>
+    <p>Click the button below to generate a random Netflix show that you could watch!</p>
+    <button type="button" onclick="randomMovie()">Let's Binge!</button>
+    <p id="printMovie"></p>
+  </div>
+  <div class="footer">
+    <h2>Stay Home, Save Lives</h2>
+  </div>
 
 </body>
 {% endblock %}

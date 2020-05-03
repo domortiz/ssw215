@@ -14,7 +14,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">QuaranSite</a>
+        <a class="navbar-brand" href="/">QUARANSITE</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,20 +25,23 @@
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="MeetTheTeam">The Team </a>
+                    <a class="nav-link" href="quiz">Movie Quiz</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="quiz">Quiz</a>
+                    <a class="nav-link" href="playlistgenerator">Playlist Generator</a>
                 </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+            <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="contact">Contact</a>
+                    <a class="nav-link" href="aboutus">About Us</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
-        <img src="static/images/quaransite.png" class="img-fluid" alt="Responsive image">
+    <img src="static/images/quaransite.png" class="img-fluid" alt="Quaransite Banner">
 
     {% block content %}
     {% endblock %}
