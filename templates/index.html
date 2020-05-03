@@ -1,7 +1,15 @@
 {% extends "base.html" %}
 {% block title %}Home Page{% endblock %}
 {% block content %}
-
+<body>
+  <script>
+    var movies =["Friends", "The Office", "Love is Blind","Breaking Bad","Tiger King"];
+    
+    function randomMovie(){
+      randomItem = movies[Math.floor(Math.random()*movies.length)];
+      document.getElementById("printMovie").innerHTML=randomItem;
+    }
+  </script>
 <div class="indexRow">
   <h2>Welcome to quaranSite </h2>
   <p class="homefont">With the current Covid-19 pandemic and quarantine conditions that many find themselves in,
