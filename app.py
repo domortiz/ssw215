@@ -23,6 +23,12 @@ def quiz():
 
 @app.route('/playlistgenerator', methods=['GET', 'POST'])
 def playlistgenerator():
+    '''
+    Creates a playlist of recommended songs based on your top 5 Artists!
+    Using Spotipy: a Python library to help work with the Spotify Web API
+    https://spotipy.readthedocs.io/en/2.12.0/
+    '''
+
     scope = 'user-library-read user-top-read playlist-read-private user-library-modify playlist-read-collaborative playlist-modify-public playlist-modify-private'
     cid = 'd77d13817b264bacb100a71642df973e'
     secret = '7d11f579e22e4b49867fdd8504fe78df'
@@ -36,7 +42,8 @@ def playlistgenerator():
         # sys.exit()
 
     # get user's permission
-    token = util.prompt_for_user_token(username, scope, cid, secret, redirect_uri)
+    token = util.prompt_for_user_token(
+        username, scope, cid, secret, redirect_uri)
     if token:
         sp = spotipy.Spotify(auth=token)
         topArtists = sp.current_user_top_artists(limit=5)
@@ -48,7 +55,7 @@ def playlistgenerator():
             id, "Quaransite Recommendations!", public=True))['id']
         track_ids = []
         rec = sp.recommendations(seed_artists=artist_seeds,
-                                seed_genres=None, seed_tracks=None, limit=20, country=None)
+                                 seed_genres=None, seed_tracks=None, limit=20, country=None)
         for track in rec['tracks']:
             track_ids.append(track['id'])
 
