@@ -1,4 +1,15 @@
 {% extends "base.html" %}
 {% block title %}Playlist Generator{% endblock %}
 {% block content %}
+<div class="container">
+    <div class="page-header">
+      <h1>Playlist Generator</h1>      
+    </div>
+    <p>Need some more music to listen to? We gotchu. </p>      
+    <p>This program, once you authenticate and authorize this application to access your Spotify account, generates a new playlist for you to listen to.<br><br>
+        We used Spotipy to create this, which is a Python library for the Spotify Web API. Our script grabs your top 5 Artists, and then uses Spotify's recommendation algorithm to create a playlist for you!<br><br>
+        Check your Spotify account for a new playlist, and you can do this as many times as you want. 👁️👅👁️ 
+    </p>      
+  </div>
 {% endblock %}
+

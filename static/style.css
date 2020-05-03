@@ -145,11 +145,10 @@ html {
   white-space: nowrap;
 }
 
-
 .indexRow {
   display: block;
-  color: red;
-  background: radial-gradient( #aaa, #fff);
+  color: #e60a13;
+  /* background: radial-gradient( #aaa, #fff); */
   padding: 50px;
 }
 
