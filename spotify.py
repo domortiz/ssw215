@@ -14,12 +14,12 @@ secret = '7d11f579e22e4b49867fdd8504fe78df'
 redirect_uri = 'http://localhost:8888'
 
 if len(sys.argv) > 1:
-    username = sys.argv[1] #take username as an argument
+    username = sys.argv[1]  # take username as an argument
 else:
     print("Usage: %s username" % (sys.argv[0],))
     sys.exit()
 
-#get user's permission
+# get user's permission
 token = util.prompt_for_user_token(username, scope, cid, secret, redirect_uri)
 if token:
     sp = spotipy.Spotify(auth=token)
@@ -28,7 +28,8 @@ if token:
     for artist in topArtists['items']:
         artist_seeds.append(artist['id'])
     id = sp.current_user()['id']
-    playlist_id = (sp.user_playlist_create(id, "Quaransite Recommendations!", public=True))['id']
+    playlist_id = (sp.user_playlist_create(
+        id, "Quaransite Recommendations!", public=True))['id']
     track_ids = []
     rec = sp.recommendations(seed_artists=artist_seeds,
                              seed_genres=None, seed_tracks=None, limit=20, country=None)

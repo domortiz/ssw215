@@ -14,7 +14,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">QuaranSite</a>
+        <a class="navbar-brand" href="/">QUARANSITE</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,23 +25,39 @@
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="MeetTheTeam">The Team </a>
+                    <a class="nav-link" href="quiz">Movie Quiz</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="quiz">Quiz</a>
+                    <a class="nav-link" href="playlistgenerator">Playlist Generator</a>
                 </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+            <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="contact">Contact</a>
+                    <a class="nav-link" href="aboutus">About Us</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
-        <img src="static/images/quaransite.png" class="img-fluid" alt="Responsive image">
+    <img src="static/images/quaransite.png" class="img-fluid" alt="Quaransite Banner">
 
     {% block content %}
+    
     {% endblock %}
+
+    <!-- Footer -->
+<footer class="page-footer font-small blue">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="https://github.com/domortiz/ssw215"> Ruthy Levi, Dom Ortiz, Kenny Skelton</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
