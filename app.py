@@ -23,6 +23,10 @@ def quiz():
 
 @app.route('/playlistgenerator', methods=['GET', 'POST'])
 def playlistgenerator():
+    return render_template("playlistgen.html")
+
+@app.route('/playlistresults', methods=['GET', 'POST'])
+def playlistresults():
     '''
     Creates a playlist of recommended songs based on your top 5 Artists!
     Using Spotipy: a Python library to help work with the Spotify Web API
@@ -64,7 +68,6 @@ def playlistgenerator():
         print("Can't get token for", username)
 
     return render_template("playlistgen.html")
-
 
 if __name__ == "__main__":
     app.run(debug=True)
