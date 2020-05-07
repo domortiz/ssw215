@@ -9,3 +9,5 @@ userAnswers = {}
 totalAnswerKey = {1:{"A":"Altered Carbon","B":""},2:{"A":"Bee Movie"}}
 
 questionImages = {1:"string containing image path",2:"string containing image path"}
+
+userResult = ""

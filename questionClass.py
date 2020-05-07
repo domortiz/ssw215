@@ -1,3 +1,5 @@
+from questionData import userResult
+
 class Question:
     def __init__(self,questionID,questionText,questionImage,choiceText,answerKey):
         self.questionID = questionID
@@ -19,7 +21,6 @@ class Quiz:
         self.questions = []
         for x in range(len(questionTexts)):
             self.questions.append(Question(x+1,questionTexts[x+1],questionImages[x+1],choiceTexts[x+1],answerKey[x+1]))
-        
     def __str__(self):
         output = []
         for question in self.questions:
@@ -34,7 +35,7 @@ class Quiz:
             if question.answerKey[answers[question.questionID]] in logger:
                 logger[question.answerKey[answers[question.questionID]]] += 1
 
-        return max(logger, key=logger.get)
+        userResult = max(logger, key=logger.get)
     
 
 

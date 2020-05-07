@@ -18,8 +18,11 @@ def team():
 def quiz():
     quiz = Quiz(questionText,questionImages,questionChoices,totalAnswerKey)
     
-    return render_template("quiz.html",quiz = quiz, userAnswers = userAnswers)
+    return render_template("quiz.html", quiz = quiz, userAnswers = userAnswers)
 
+@app.route('/quizResults')
+def quizResults():
+    return render_template("quizResults.html", result = userResult)
 
 @app.route('/contact')
 def contact():
