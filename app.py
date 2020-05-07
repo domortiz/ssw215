@@ -1,6 +1,7 @@
 from flask import Flask, redirect, url_for, render_template
 from questionData import * 
 from questionClass import * 
+
 app = Flask(__name__)
 
 
@@ -22,6 +23,9 @@ def quiz():
 
 @app.route('/quizResults')
 def quizResults():
+
+    
+    
     return render_template("quizResults.html", result = userResult)
 
 @app.route('/contact')

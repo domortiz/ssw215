@@ -15,11 +15,9 @@
         {% else %}
             {% set name = 'D'%}
         {% endif %}
-
-        <button name = "{{questionID ~ name}}" onclick="processButtonClick(this)">{{questionChoices[loop.index0]}}</button>
+        <input type="radio" name={{questionID}} value="{{name}}"><label for="{{name}}">{{questionChoices[loop.index0]}}:</label>
     {% endfor %}
 {%- endmacro %}
-
 <style> 
     .submitButton { 
     background-color: white; 
@@ -35,20 +33,11 @@
 
 
 <body>
-    {% for question in quiz.questions %}
-       {{displayQuestion(question.questionID, question.text, question.image, question.choices)}}
-    {% endfor %}
-    <div>
-
-
-
-    </div>
     <form action="./quizResults"> 
-        <button class = "submitButton" type="submit" method = "post"> 
-            
-            Submit
-            
-        </button> 
+        {% for question in quiz.questions %}
+            {{displayQuestion(question.questionID, question.text, question.image, question.choices)}}
+        {% endfor %}
+        <input class = "submitButton" type="submit" name = "action" method = "post"> 
     </form> 
     
 </body>
