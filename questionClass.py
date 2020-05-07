@@ -17,11 +17,11 @@ class Question:
         return str(output)
 
 class Quiz:
-    def __init__(self,questionTexts,questionImages,choiceTexts,answerKey):
+    def __init__(self,questionText,questionImages,choiceText,answerKey):
         self.questions = []
         self.answerKey = answerKey
-        for x in range(len(questionTexts)):
-            self.questions.append(Question(x+1,questionTexts[x+1],questionImages[x+1],choiceTexts[x+1]))
+        for x in range(len(questionText)):
+            self.questions.append(Question(x+1,questionText[x+1],questionImages[x+1],choiceText[x+1]))
     def __str__(self):
         output = []
         for question in self.questions:
@@ -34,7 +34,7 @@ class Quiz:
 
         for x in range(len(answers)):
             if self.answerKey[x+1][answers[x+1]] in logger:
-                self.answerKey[x+1][answers[x+1]] += 1
+                logger[self.answerKey[x+1][answers[x+1]]] += 1
 
         return max(logger, key=logger.get)
     

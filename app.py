@@ -27,7 +27,8 @@ def quizResults():
     for x in range(len(quiz.questions)):
         userAnswers[x+1] = request.form[str(x+1)]
     userResult = quiz.gradeQuiz(userAnswers,quizOutcomes)
-    return render_template("quizResults.html",result=userResult)
+    resultImage = outcomePictures[userResult]
+    return render_template("quizResults.html",result=userResult,resultImage=resultImage)
 
 @app.route('/contact')
 def contact():

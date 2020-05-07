@@ -2,9 +2,17 @@
 {% block title %}quizResults{% endblock %}
 {% block content %}
 
+<style>
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+</style>
 
 <body>
-    <h1>The Results are In, you should be watching {{result}}</h1>
+    <h1 style="text-align: center;">The Results are in, you should be watching "{{result}}"</h1>
+    <img src= {{resultImage}} alt="movieImage" style="width:750;height:750;vertical-align:middle"> 
 
 
 </body>
