@@ -273,17 +273,6 @@ button {
   margin: 20px;
 }
 
-.quizForm {
-  display: inline-block;
-  width: 10px;
-}
-
-.quizLabel {
-  display: inline-block;
-  text-align: center;
-  width: 10px;
-}
-
 .submitButton {
   background-color: white;
   border: 2px solid black;

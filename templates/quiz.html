@@ -26,8 +26,9 @@
 {% else %}
 {% set name = 'D'%}
 {% endif %}
-<input type="radio" class="quizForm" name={{questionID}} value="{{name}}">
-<label for="{{name}}" class="quizLabel">{{questionChoices[loop.index0]}}</label>
+<input type="radio" style = "width: 10px" name={{questionID}} value="{{name}}"> 
+<label for="{{name}}" style = "display: inline-block; text-align: left; width: 100%">{{questionChoices[loop.index0]}}</label> 
+       
 <div>
 
 
