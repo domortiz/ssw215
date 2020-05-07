@@ -117,16 +117,6 @@ html {
   color: grey;
 }
 
-#printMovie {
-  display: block;
-  color: white;
-  background-color: #1abc9c;
-  width: 25%;
-  border-left: 10px solid #333;
-  padding: 5px;
-  margin: 20px;
-}
-
 @import url('https://fonts.googleapis.com/css?family=Roboto:700,900');
 .logoheader {
   background: radial-gradient(#fff, #aaa);
@@ -179,13 +169,6 @@ html {
 
 .tech-slideshow .mover-1 {
   animation: moveSlideshow 12s linear infinite;
-}
-
-.tech-slideshow .mover-2 {
-  opacity: 0;
-  transition: opacity 0.5s ease-out;
-  background-position: 0 -200px;
-  animation: moveSlideshow 15s linear infinite;
 }
 
 @keyframes moveSlideshow {
@@ -278,4 +261,14 @@ button {
   /* This extra margin represent roughly the same space as the space
        between the labels and their text fields */
   margin-left: .5em;
+}
+
+#randomMovie {
+  display: block;
+  color: white;
+  background-color: red;
+  width: 25%;
+  border-left: 10px solid #333;
+  padding: 5px;
+  margin: 20px;
 }
