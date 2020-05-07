@@ -13,8 +13,7 @@
 </head>
 
 <body>
-    <script type = "text/python" 
-    src = "{{ url_for('static', filename = 'spotify.py') }}" ></script>
+    <script type="text/python" src="{{ url_for('static', filename = 'spotify.py') }}"></script>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/">QUARANSITE</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -46,20 +45,20 @@
     <img src="static/images/quaransite.png" class="img-fluid" alt="Quaransite Banner">
 
     {% block content %}
-    
+
     {% endblock %}
 
     <!-- Footer -->
-<footer class="page-footer font-small blue">
+    <footer class="page-footer font-small blue">
 
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-      <a href="https://github.com/domortiz/ssw215"> Ruthy Levi, Dom Ortiz, Kenny Skelton</a>
-    </div>
-    <!-- Copyright -->
-  
-  </footer>
-  <!-- Footer -->
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="https://github.com/domortiz/ssw215"> Ruthy Levi, Dom Ortiz, Kenny Skelton</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
