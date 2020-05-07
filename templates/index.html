@@ -4,7 +4,8 @@
 
 <body>
   <script>
-    var movies = ["Friends", "The Office", "Love is Blind", "Breaking Bad", "Tiger King"];
+    var movies = ["Altered Carbon", "Parks and Recreation", "Tiger King", "You", "Black Mirror", "The Withcer",
+                   "Attack on Titan", "Our Planet", "Glee"];
 
     function randomMovie() {
       randomItem = movies[Math.floor(Math.random() * movies.length)];
@@ -12,7 +13,7 @@
     }
   </script>
   <div class="container">
-    <div class="page-header">
+    <div class="page-header" style="padding-top: 15px;">
       <h1>Welcome to QuaranSite!</h1>
     </div>
     <p> With the current COVID-19 pandemic and quarantine conditions that many find themselves in, it
@@ -25,20 +26,20 @@
       also created a script that grabs your top 5 artists from Spotify, and uses Spotify's recommendation API to create
       a new playlist for you to listen to!
     </p>
+ 
 
-    <div class="tech-slideshow">
-      <div class="mover-1"></div>
-      <div class="mover-2"></div>
-    </div>
-  </div>
+    <div class="tech-slideshow" style="padding-top: 15px;">
+      <div class="mover-1" style="padding-top: 15px;"></div>
+     </div>
+</div>
 
   <div class="container">
-    <div class="page-header">
+    <div class="page-header" style="padding-top: 15px;">
       <h3>Don't want to take the Quiz?</h3>
     </div>  
     <p>Click the button below to generate a random Netflix show that you could watch!</p>
     <button type="button" class="btn btn-secondary btn-lg" onclick="randomMovie()">Let's Binge!</button>
-    <p id="printMovie"></p>
+    <p id="printMovie" style="background-color: #E50914;"></p>
   </div>
   </div>
   <div class="footer">
