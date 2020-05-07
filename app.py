@@ -1,7 +1,9 @@
-from flask import Flask, redirect, url_for, render_template
+from flask import Flask, redirect, url_for, render_template, request
 import sys
 import spotipy
 import spotipy.util as util
+from questionData import * 
+from questionClass import * 
 
 app = Flask(__name__)
 
@@ -18,8 +20,18 @@ def team():
 
 @app.route('/quiz')
 def quiz():
-    return render_template("quiz.html")
+    quiz = Quiz(questionText,questionImages,questionChoices,totalAnswerKey)
+    
+    return render_template("quiz.html", quiz = quiz)
 
+@app.route('/quizResults', methods = ["POST"])
+def quizResults():
+    quiz = Quiz(questionText,questionImages,questionChoices,totalAnswerKey)
+    for x in range(len(quiz.questions)):
+        userAnswers[x+1] = request.form[str(x+1)]
+    userResult = quiz.gradeQuiz(userAnswers,quizOutcomes)
+    resultImage = outcomePictures[userResult]
+    return render_template("quizResults.html",result=userResult,resultImage=resultImage)
 
 @app.route('/playlistgenerator', methods=['GET', 'POST'])
 def playlistgenerator():

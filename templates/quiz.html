@@ -10,4 +10,40 @@
         analyze your preferences and provide you with a show that we think you will enjoy. 👁️💋👁️
     </p>
 </div>
+
+{% macro displayQuestion(questionID, questionTitle, questionImage, questionChoices) -%}
+    <h3>Question {{ questionID }}: </h3><h3>{{ questionTitle }}</h3>
+    
+    <img src= {{questionImage}} alt="movieImage" style="width:350px;height:300px;" > <br>
+    {% for choice in questionChoices %}
+        {% if loop.index0 == 0 %}
+            {% set name = 'A'%}
+        {% elif loop.index0 == 1 %}
+            {% set name = 'B'%}
+        {% elif loop.index0 == 2 %}
+            {% set name = 'C'%}
+        {% else %}
+            {% set name = 'D'%}
+        {% endif %}
+        <input type="radio" class = "quizForm" name={{questionID}} value="{{name}}"> 
+        <label for="{{name}}" class = "quizLabel">{{questionChoices[loop.index0]}}</label> 
+        <div>
+
+
+        </div>
+    {% endfor %}
+{%- endmacro %}
+
+<body>
+    <form action="./quizResults" method = "POST"> 
+        {% for question in quiz.questions %}
+            {{displayQuestion(question.questionID, question.text, question.image, question.choices)}}
+        {% endfor %}
+        <input class = "submitButton" type="submit" name = "action"> 
+    </form> 
+    
+</body>
+
 {% endblock %}
+
+</html>
