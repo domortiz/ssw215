@@ -4,7 +4,7 @@
 
 {% macro displayQuestion(questionID, questionTitle, questionImage, questionChoices) -%}
     <h3>Question {{ questionID }}: </h3><h3>"{{ questionTitle }}"</h3>
-    <img src="{{questionImage}}" alt="movieImage">
+    <img src="{{questionImage}}" alt="movieImage"><br>
     {% for choice in questionChoices %}
         {% if loop.index0 == 0 %}
             {% set name = 'A'%}
@@ -15,7 +15,8 @@
         {% else %}
             {% set name = 'D'%}
         {% endif %}
-        <input type="radio" name={{questionID}} value="{{name}}"><label for="{{name}}">{{questionChoices[loop.index0]}}:</label>
+        <input type="radio" id = "quizLabel" name={{questionID}} value="{{name}}"> 
+        <label for="{{name}}" id = "quizForm" >{{questionChoices[loop.index0]}}:</label> 
     {% endfor %}
 {%- endmacro %}
 <style> 
@@ -33,11 +34,11 @@
 
 
 <body>
-    <form action="./quizResults"> 
+    <form action="./quizResults" method = "POST"> 
         {% for question in quiz.questions %}
             {{displayQuestion(question.questionID, question.text, question.image, question.choices)}}
         {% endfor %}
-        <input class = "submitButton" type="submit" name = "action" method = "post"> 
+        <input class = "submitButton" type="submit" name = "action"> 
     </form> 
     
 </body>

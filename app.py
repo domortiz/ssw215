@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, render_template
+from flask import Flask, redirect, url_for, render_template, request
 from questionData import * 
 from questionClass import * 
 
@@ -19,14 +19,15 @@ def team():
 def quiz():
     quiz = Quiz(questionText,questionImages,questionChoices,totalAnswerKey)
     
-    return render_template("quiz.html", quiz = quiz, userAnswers = userAnswers)
+    return render_template("quiz.html", quiz = quiz)
 
-@app.route('/quizResults')
+@app.route('/quizResults', methods = ["POST"])
 def quizResults():
-
-    
-    
-    return render_template("quizResults.html", result = userResult)
+    quiz = Quiz(questionText,questionImages,questionChoices,totalAnswerKey)
+    for x in range(len(quiz.questions)):
+        userAnswers[x+1] = request.form[str(x+1)]
+    userResult = quiz.gradeQuiz(userAnswers,quizOutcomes)
+    return render_template("quizResults.html",result=userResult)
 
 @app.route('/contact')
 def contact():

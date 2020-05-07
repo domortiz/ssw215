@@ -1,12 +1,12 @@
 from questionData import userResult
 
 class Question:
-    def __init__(self,questionID,questionText,questionImage,choiceText,answerKey):
+    def __init__(self,questionID,questionText,questionImage,choiceText):
         self.questionID = questionID
         self.text = questionText
         self.image = questionImage
         self.choices = choiceText
-        self.answerKey = answerKey
+        
     def __str__(self):
         output = []
         output.append(self.questionID)
@@ -19,8 +19,9 @@ class Question:
 class Quiz:
     def __init__(self,questionTexts,questionImages,choiceTexts,answerKey):
         self.questions = []
+        self.answerKey = answerKey
         for x in range(len(questionTexts)):
-            self.questions.append(Question(x+1,questionTexts[x+1],questionImages[x+1],choiceTexts[x+1],answerKey[x+1]))
+            self.questions.append(Question(x+1,questionTexts[x+1],questionImages[x+1],choiceTexts[x+1]))
     def __str__(self):
         output = []
         for question in self.questions:
@@ -31,11 +32,11 @@ class Quiz:
         for show in outcomes:
             logger[show] = 0
 
-        for question in self.questions:
-            if question.answerKey[answers[question.questionID]] in logger:
-                logger[question.answerKey[answers[question.questionID]]] += 1
+        for x in range(len(answers)):
+            if self.answerKey[x+1][answers[x+1]] in logger:
+                self.answerKey[x+1][answers[x+1]] += 1
 
-        userResult = max(logger, key=logger.get)
+        return max(logger, key=logger.get)
     
 
 
