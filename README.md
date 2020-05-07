@@ -10,10 +10,11 @@ Not only that, but we also created a script that grabs your top 5 artists from S
 
 Stay home to save lives. 
 
-## Run This Program:
+## How To Run:
 1. git clone https://github.com/domortiz/ssw215.git
 2. cd ssw215
-3. python app.py
+3. pip install flask spotipy
+4. python app.py
 
 ### Contributors:
 - Ruthy Levi
