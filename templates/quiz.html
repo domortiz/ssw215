@@ -2,9 +2,55 @@
 {% block title %}Quiz{% endblock %}
 {% block content %}
 
+{% macro displayQuestion(questionID, questionTitle, questionImage, questionChoices) -%}
+    <h3>Question {{ questionID }}: </h3><h3>"{{ questionTitle }}"</h3>
+    <img src="{{questionImage}}" alt="movieImage">
+    {% for choice in questionChoices %}
+        {% if loop.index0 == 0 %}
+            {% set name = 'A'%}
+        {% elif loop.index0 == 1 %}
+            {% set name = 'B'%}
+        {% elif loop.index0 == 2 %}
+            {% set name = 'C'%}
+        {% else %}
+            {% set name = 'D'%}
+        {% endif %}
+
+        <button name = "{{questionID ~ name}}" onclick="processButtonClick(this)">{{questionChoices[loop.index0]}}</button>
+    {% endfor %}
+{%- endmacro %}
+
+
+
+
 <body>
 
+    {% for question in quiz.questions %}
+       {{displayQuestion(question.questionID ,question.text, question.image, question.choices)}}
+    {% endfor %}
+    <div>
+
+
+
+    </div>
+    <button onclick="submit()">submit</button>
+    
 </body>
+<script>
+var userAnswers = {};
+function processButtonClick(element) {
+    question = element.name.charAt(0)
+    choice = element.name.charAt(1)
+    userAnswers[Number(question)] = choice
+}
+function submit() {
+    
+        }
+</script>
+
+
+
+
 {% endblock %}
 
 </html>
